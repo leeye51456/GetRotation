@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0,user-scalable=no">
+  <title>로테이션</title>
+  <link rel="stylesheet" type="text/css" href="51456.css">
+  <script src="jquery-3.0.0.min.js" defer></script>
+  <script src="index.js" defer></script>
+</head>
+
+<body>
+
+<header>
+  <h1>로테이션</h1>
+</header>
+
+<section>
+  <h2>이름 및 파트 리스트</h2>
+  <li>
+    <label for="names-txt">이름</label>
+    <input id="names-txt" type="text" placeholder="쉼표로 구분" value="">
+  </li>
+  <li>
+    <label for="parts-txt">파트</label>
+    <input id="parts-txt" type="text" placeholder="쉼표로 구분" value="">
+  </li>
+  <button id="update-part-sel-btn">파트 지정 표 업데이트</button>
+  <label>주의: 업데이트 시 아래 작성한 내용이 사라집니다.</label>
+</section>
+
+<hr>
+
+<section>
+  <h2>개인별 파트 지정</h2>
+  <div id="part-sel-div">
+    <label>이 영역에 파트 지정 표가 나타납니다.</label>
+  </div>
+  <button id="update-rotation-btn">가능한 로테이션 조합 업데이트</button>
+  <label>참고: 필수 파트 지정 기능은 아직 작동하지 않습니다.</label>
+</section>
+
+<hr>
+
+<section>
+  <h2>가능한 로테이션 조합</h2>
+  <div id="rotation-div">
+    <label>이 영역에 가능한 로테이션 조합이 나타납니다.</label>
+  </div>
+</section>
+
+</body>
+
+</html>
