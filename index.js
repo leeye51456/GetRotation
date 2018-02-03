@@ -1,6 +1,7 @@
 var glovar = {
   names: [],
   parts: [],
+  permLength: 0
 };
 
 
@@ -139,15 +140,14 @@ function getTbodyForRotation() {
     partsLength = glovar.parts.length,
     availLength = avail.length,
     essentialLength = essential.length,
-    permLength,
     html = '';
   perm = permutation(avail);
   /*
   for (i = 0; i < essentialLength; i += 1) {
   }
   //*/
-  permLength = perm.length;
-  for (i = 0; i < permLength; i += 1) {
+  glovar.permLength = perm.length;
+  for (i = 0; i < glovar.permLength; i += 1) {
     html += '<tr><td>' + (i + 1) + '</td>';
     for (j = 0; j < partsLength; j += 1) {
       html += '<td>' + glovar.names[perm[i][j]] + '</td>';
@@ -173,6 +173,10 @@ function updateRotation() {
   $('#rotation-div').html(html);
 }
 
+function updateRandomNumber() {
+  $('#get-random-number-btn').html(Math.floor(Math.random() * glovar.permLength) + 1);
+}
+
 
 function tdClick(e) {
   $(e.target).find('input[type="checkbox"]').trigger('click').trigger('focus');
@@ -184,6 +188,7 @@ function tdClick(e) {
 $(document).ready(function () {
   $('#update-part-sel-btn').on('click', updatePartSel);
   $('#update-rotation-btn').on('click', updateRotation);
+  $('#get-random-number-btn').on('click', updateRandomNumber);
 
   $('#part-sel-div').on('click', 'table>tbody>tr>td', tdClick);
 });
