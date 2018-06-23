@@ -174,7 +174,8 @@ function updateRotation() {
 }
 
 function updateRandomNumber() {
-  $('#get-random-number-btn').html(Math.floor(Math.random() * glovar.permLength) + 1);
+  var randomNumber = Math.floor(Math.random() * glovar.permLength) + 1;
+  $('#get-random-number-btn').html("번호 뽑기: " + randomNumber);
 }
 
 
